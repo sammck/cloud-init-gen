@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cloud-init-gen"
-version = "0.1.0"
+version = "1.0.0"
 description = "Simplified generation of cloud-init user-data content"
 authors = [ "Sam McKelvie <dev@mckelvie.org>" ]
 license = "MIT"
