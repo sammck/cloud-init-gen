@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "secret-kv --test",
+            "type": "python",
+            "request": "launch",
+            "module": "secret_kv",
+            "args": [ "--test" ]
+        },
+        {
+            "name": "secret-kv create",
+            "type": "python",
+            "request": "launch",
+            "module": "secret_kv",
+            "args": [ "-p", "passw0rd", "create", "." ]
+        },
+        {
+            "name": "secret-kv --tb -r get y",
+            "type": "python",
+            "request": "launch",
+            "module": "secret_kv",
+            "args": [ "--tb", "-r", "get", "y" ]
+        }
+    ]
+}

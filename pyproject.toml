@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "cloud-init-gen"
+version = "0.1.0"
+description = "Simplified generation of cloud-init user-data content"
+authors = [ "Sam McKelvie <dev@mckelvie.org>" ]
+license = "MIT"
+keywords = [ "cloud-init", "user-data", "userdata", "ec2", "boto3", "aws", "pulumi" ]
+readme = "README.md"
+homepage = "https://github.com/sammck/cloud-init-gen"
+repository = "https://github.com/sammck/cloud-init-gen.git"
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+PyYAML = "^6.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.931"
+dunamai = "^1.9.0"
+python-semantic-release = "^7.25.2"
+types-PyYAML = "^6.0.5"
+boto3 = "^1.21.31"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+
+[tool.semantic_release]
+version_variable = 'cloud_init_gen/version.py:__version__'
+version_toml = 'pyproject.toml:tool.poetry.version'
+branch = 'main'
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
