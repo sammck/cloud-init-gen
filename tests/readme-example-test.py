@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+from typing import cast
+
 import shlex
 import json
 import boto3
-from cloud_init_gen import CloudInitDoc
+from cloud_init_gen import CloudInitDoc, JsonableDict
 
 sess = boto3.session.Session()
 aws_region = sess.region_name
@@ -61,7 +63,8 @@ cloud_cfg = dict(
       ],
   )
 
-user_data.add(cloud_cfg)  # will be rendered as yaml with implicit MIME type text/cloud-config
+# will be rendered as yaml with implicit MIME type text/cloud-config
+user_data.add(cast(JsonableDict, cloud_cfg))
 
 print(f"Final user-data (text):\n====================\n{user_data.render()}\n====================")
 print(f"Final user-data (base64):\n====================\n{user_data.render_base64()}\n====================")
